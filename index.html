@@ -21,7 +21,6 @@
             transition: background 0.3s, color 0.3s;
         }
 
-        /* DARK MODE */
         body.dark {
             background-color: #1a1a1a;
             color: #e6e6e6;
@@ -40,7 +39,6 @@
             background: #000;
         }
 
-        /* HEADER */
         header {
             background: linear-gradient(135deg, #1f3c88, #6c63ff);
             color: white;
@@ -60,7 +58,6 @@
             opacity: 0.95;
         }
 
-        /* NAV */
         nav {
             background: #1f1f1f;
             display: flex;
@@ -82,7 +79,6 @@
             border-radius: 6px;
         }
 
-        /* DARK MODE BUTTON */
         .dark-toggle {
             position: fixed;
             left: 20px;
@@ -97,7 +93,6 @@
             z-index: 999;
         }
 
-        /* HERO */
         .hero {
             background: linear-gradient(135deg, #1f3c88, #6c63ff);
             height: 200px;
@@ -111,7 +106,6 @@
             padding: 20px;
         }
 
-        /* CONTENT GRID */
         .content {
             padding: 35px;
             display: grid;
@@ -143,7 +137,6 @@
             color: #ccc;
         }
 
-        /* BUTTON */
         .youtube-btn {
             display: inline-block;
             background: linear-gradient(135deg, #1f3c88, #6c63ff);
@@ -159,7 +152,6 @@
             opacity: 0.85;
         }
 
-        /* FOOTER */
         footer {
             background: #1f1f1f;
             color: white;
@@ -181,18 +173,15 @@
 
 <body>
 
-    <!-- DARK MODE BUTTON -->
     <div class="dark-toggle" onclick="toggleDarkMode()">
         🌙 وضع ليلي
     </div>
 
-    <!-- HEADER -->
     <header>
         <h1>إسبانيا 2026: للمغتربين العرب</h1>
         <p>منصة موثوقة للمعلومات، الأخبار، والإرشادات للمهاجرين العرب في إسبانيا</p>
     </header>
 
-    <!-- NAV -->
     <nav>
         <a href="index.html">الرئيسية</a>
         <a href="#info">معلومات</a>
@@ -201,12 +190,11 @@
         <a href="#faq">الأسئلة</a>
         <a href="#videos">الفيديوهات</a>
         <a href="#comunidad">المجتمع</a>
+        <a href="cookies.html">سياسة Cookies</a>
     </nav>
 
-    <!-- CONTENT -->
     <section class="content">
 
-        <!-- QUIÉNES SOMOS -->
         <div class="card" id="info">
             <h2>من نحن</h2>
             <p class="description">
@@ -216,7 +204,6 @@
             </p>
         </div>
 
-        <!-- NEWS -->
         <div class="card" id="news">
             <h2>أهم الأخبار اليوم</h2>
             <ul>
@@ -226,19 +213,25 @@
             </ul>
         </div>
 
-        <!-- SERVICES -->
         <div class="card" id="services">
             <h2>الخدمات والإجراءات</h2>
             <ul>
                 <li><a href="nie-espana.html">🧭 كيفية الحصول على NIE</a></li>
                 <li><a href="empadronamiento.html">🏠 خطوات empadronamiento</a></li>
                 <li><a href="asilo-espana.html">📄 طلب اللجوء في إسبانيا</a></li>
-                <li><a href="ayudas-sociales.html">💶 المساعدات الاجتماعية</a></li>
+                <li><a href="ayudas-sociales.html">💶 المساعدات sociales</a></li>
                 <li><a href="cita-previa.html">📅 كيفية حجز cita previa</a></li>
+                <li><a href="cuenta-bancaria.html">🏦 فتح حساب بنكي</a></li>
+                <li><a href="alquiler-casa.html">🏡 استئجار منزل</a></li>
+                <li><a href="seguro-medico.html">🩺 التأمين الصحي</a></li>
+                <li><a href="licencia-conducir.html">🚗 رخصة القيادة</a></li>
+                <li><a href="escuelas-arabes.html">📚 المدارس للأطفال</a></li>
+                <li><a href="impuestos-espana.html">💰 الضرائب للمهاجرين</a></li>
+                <li><a href="matrimonio-espana.html">💍 الزواج في إسبانيا</a></li>
+                <li><a href="renovacion-residencia.html">🔄 تجديد الإقامة</a></li>
             </ul>
         </div>
 
-        <!-- FAQ -->
         <div class="card" id="faq">
             <h2>أسئلة شائعة</h2>
             <ul>
@@ -248,7 +241,6 @@
             </ul>
         </div>
 
-        <!-- VIDEOS -->
         <div class="card" id="videos">
             <h2>أحدث الفيديوهات</h2>
             <p>شاهد أحدث فيديوهاتنا على القناة:</p>
@@ -257,7 +249,6 @@
             </a>
         </div>
 
-        <!-- COMMUNITY -->
         <div class="card" id="comunidad">
             <h2>منشورات المجتمع</h2>
             <p>تابع آخر التحديثات على صفحة المجتمع:</p>
@@ -266,7 +257,6 @@
             </a>
         </div>
 
-        <!-- REVIEWS -->
         <div class="card">
             <h2>آراء المتابعين</h2>
             <p>⭐ "أفضل قناة للمغتربين العرب"</p>
@@ -280,17 +270,16 @@
         كل ما تحتاج معرفته للعيش في إسبانيا
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Contacto: u8233844791@gmail.com</p>
-        <p>&copy; 2026 Akhbar Almuhagir</p>
-        <br>
-        <a href="about.html">من نحن</a> |
-        <a href="privacy.html">سياسة الخصوصية</a> |
-        <a href="terms.html">الشروط والأحكام</a> |
-        <a href="contact.html">اتصل بنا</a>| 
-        <a href="cookies.html">سياسة Cookies</a>
-    </footer>
+  <footer>
+    <p>Contacto: u8233844791@gmail.com</p>
+    <p>&copy; 2026 Akhbar Almuhagir</p>
+    <br>
+    <a href="about.html">من نحن</a> |
+    <a href="privacy.html">سياسة الخصوصية</a> |
+    <a href="terms.html">الشروط والأحكام</a> |
+    <a href="contact.html">اتصل بنا</a> |
+    <a href="cookies.html">سياسة Cookies</a>
+</footer>
 
     <script>
         function toggleDarkMode() {
