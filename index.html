@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إسبانيا 2025: للمغتربين العرب</title>
+    <title>إسبانيا 2026: للمغتربين العرب</title>
 
+    <meta name="description"
+        content="إسبانيا 2026: منصة عربية تقدم أخبار، معلومات، وإرشادات للمغتربين العرب في إسبانيا.">
+    <meta name="keywords" content="إسبانيا, مغتربين, عرب, الهجرة, اللجوء, المساعدات, أخبار إسبانيا, العرب في إسبانيا">
+    <meta name="robots" content="index, follow">
 
     <style>
         body {
@@ -16,29 +21,24 @@
             transition: background 0.3s, color 0.3s;
         }
 
-
         /* DARK MODE */
         body.dark {
             background-color: #1a1a1a;
             color: #e6e6e6;
         }
 
-
         body.dark .card {
             background: #2a2a2a;
             color: #e6e6e6;
         }
 
-
         body.dark nav {
             background: #000;
         }
 
-
         body.dark footer {
             background: #000;
         }
-
 
         /* HEADER */
         header {
@@ -48,13 +48,11 @@
             text-align: center;
         }
 
-
         header h1 {
             margin: 0;
             font-size: 2.8em;
             font-weight: bold;
         }
-
 
         header p {
             margin-top: 12px;
@@ -62,15 +60,14 @@
             opacity: 0.95;
         }
 
-
         /* NAV */
         nav {
             background: #1f1f1f;
             display: flex;
             justify-content: center;
             padding: 12px 0;
+            flex-wrap: wrap;
         }
-
 
         nav a {
             color: white;
@@ -80,12 +77,10 @@
             transition: 0.3s;
         }
 
-
         nav a:hover {
             background: #6c63ff;
             border-radius: 6px;
         }
-
 
         /* DARK MODE BUTTON */
         .dark-toggle {
@@ -98,23 +93,23 @@
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 999;
         }
-
 
         /* HERO */
         .hero {
-            background: url('banner.jpg') no-repeat center center/cover;
-            height: 330px;
+            background: linear-gradient(135deg, #1f3c88, #6c63ff);
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 2.3em;
+            font-size: 2em;
             font-weight: bold;
-            text-shadow: 0 0 12px rgba(0,0,0,0.4);
+            text-align: center;
+            padding: 20px;
         }
-
 
         /* CONTENT GRID */
         .content {
@@ -124,15 +119,13 @@
             gap: 28px;
         }
 
-
         .card {
             background: white;
             padding: 22px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-top: 5px solid #6c63ff;
         }
-
 
         .card h2 {
             margin-top: 0;
@@ -140,13 +133,15 @@
             font-size: 1.5em;
         }
 
-
         .description {
             font-size: 1.1em;
             color: #444;
             margin-bottom: 15px;
         }
 
+        body.dark .description {
+            color: #ccc;
+        }
 
         /* BUTTON */
         .youtube-btn {
@@ -160,11 +155,9 @@
             transition: 0.3s;
         }
 
-
         .youtube-btn:hover {
             opacity: 0.85;
         }
-
 
         /* FOOTER */
         footer {
@@ -174,28 +167,34 @@
             padding: 18px;
             margin-top: 35px;
         }
+
+        footer a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 
-
 <body>
 
-
     <!-- DARK MODE BUTTON -->
-    <div class="dark-toggle" onclick="document.body.classList.toggle('dark')">
+    <div class="dark-toggle" onclick="toggleDarkMode()">
         🌙 وضع ليلي
     </div>
 
-
     <!-- HEADER -->
     <header>
-        <h1>إسبانيا 2025: للمغتربين العرب</h1>
+        <h1>إسبانيا 2026: للمغتربين العرب</h1>
         <p>منصة موثوقة للمعلومات، الأخبار، والإرشادات للمهاجرين العرب في إسبانيا</p>
     </header>
 
-
     <!-- NAV -->
     <nav>
+        <a href="index.html">الرئيسية</a>
         <a href="#info">معلومات</a>
         <a href="#news">الأخبار</a>
         <a href="#services">الخدمات</a>
@@ -204,27 +203,18 @@
         <a href="#comunidad">المجتمع</a>
     </nav>
 
-
-    <!-- HERO -->
-    <section class="hero">
-        كل ما تحتاج معرفته للعيش في إسبانيا
-    </section>
-
-
     <!-- CONTENT -->
     <section class="content">
-
 
         <!-- QUIÉNES SOMOS -->
         <div class="card" id="info">
             <h2>من نحن</h2>
             <p class="description">
-                "المغترب 2025" هو مشروع إعلامي مخصص للجالية العربية في إسبانيا.
+                "المغترب 2026" هو مشروع إعلامي مخصص للجالية العربية في إسبانيا.
                 نقدم محتوى موثوقًا حول الهجرة، القوانين، الدراسة، العمل، المساعدات الاجتماعية،
                 وأهم الأخبار التي تهم كل مغترب عربي.
             </p>
         </div>
-
 
         <!-- NEWS -->
         <div class="card" id="news">
@@ -236,19 +226,17 @@
             </ul>
         </div>
 
-
         <!-- SERVICES -->
         <div class="card" id="services">
             <h2>الخدمات والإجراءات</h2>
             <ul>
-                <li>🧭 كيفية الحصول على NIE</li>
-                <li>🏠 خطوات empadronamiento</li>
-                <li>📄 طلب اللجوء في إسبانيا</li>
-                <li>💶 المساعدات الاجتماعية المتاحة</li>
-                <li>📅 كيفية حجز cita previa</li>
+                <li><a href="nie-espana.html">🧭 كيفية الحصول على NIE</a></li>
+                <li><a href="empadronamiento.html">🏠 خطوات empadronamiento</a></li>
+                <li><a href="asilo-espana.html">📄 طلب اللجوء في إسبانيا</a></li>
+                <li><a href="ayudas-sociales.html">💶 المساعدات الاجتماعية</a></li>
+                <li><a href="cita-previa.html">📅 كيفية حجز cita previa</a></li>
             </ul>
         </div>
-
 
         <!-- FAQ -->
         <div class="card" id="faq">
@@ -260,7 +248,6 @@
             </ul>
         </div>
 
-
         <!-- VIDEOS -->
         <div class="card" id="videos">
             <h2>أحدث الفيديوهات</h2>
@@ -269,7 +256,6 @@
                 مشاهدة الفيديوهات
             </a>
         </div>
-
 
         <!-- COMMUNITY -->
         <div class="card" id="comunidad">
@@ -280,7 +266,6 @@
             </a>
         </div>
 
-
         <!-- REVIEWS -->
         <div class="card">
             <h2>آراء المتابعين</h2>
@@ -289,16 +274,36 @@
             <p>⭐ "أنقذتموني في أول أسبوع لي في إسبانيا"</p>
         </div>
 
-
     </section>
 
+    <section class="hero">
+        كل ما تحتاج معرفته للعيش في إسبانيا
+    </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>Contacto: akhbar almuhagir</p>
-        <p>&copy; 2025 Akhbar Almuhagir</p>
+        <p>Contacto: u8233844791@gmail.com</p>
+        <p>&copy; 2026 Akhbar Almuhagir</p>
+        <br>
+        <a href="about.html">من نحن</a> |
+        <a href="privacy.html">سياسة الخصوصية</a> |
+        <a href="terms.html">الشروط والأحكام</a> |
+        <a href="contact.html">اتصل بنا</a>| 
+        <a href="cookies.html">سياسة Cookies</a>
     </footer>
 
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            var btn = document.querySelector('.dark-toggle');
+            if (document.body.classList.contains('dark')) {
+                btn.innerHTML = '☀️ وضع عادي';
+            } else {
+                btn.innerHTML = '🌙 وضع ليلي';
+            }
+        }
+    </script>
 
 </body>
+
 </html>

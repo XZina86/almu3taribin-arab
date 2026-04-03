@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xzina86.github.io/almu3taribin-arab/sitemap.xml
