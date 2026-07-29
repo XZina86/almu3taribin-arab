@@ -12,181 +12,402 @@
     <meta name="robots" content="index, follow">
 
     <style>
-        body {
-            font-family: "Tahoma", Arial, sans-serif;
+        * {
             margin: 0;
-            background-color: #f4f6fb;
-            color: #333;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Tahoma", "Segoe UI", Arial, sans-serif;
+            background-color: #f0f4fa;
+            color: #1e2a3a;
             line-height: 1.7;
             transition: background 0.3s, color 0.3s;
         }
 
         body.dark {
-            background-color: #1a1a1a;
-            color: #e6e6e6;
+            background-color: #121824;
+            color: #e0e6ef;
         }
 
         body.dark .card {
-            background: #2a2a2a;
-            color: #e6e6e6;
+            background: #1e2a3a;
+            color: #e0e6ef;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         body.dark nav {
-            background: #000;
+            background: #0b1119;
         }
 
         body.dark footer {
-            background: #000;
+            background: #0b1119;
         }
 
+        body.dark .card h2 {
+            color: #8a9cff;
+        }
+
+        body.dark .card ul li a {
+            color: #8a9cff;
+        }
+
+        body.dark .hero {
+            background: linear-gradient(135deg, #0f1a3a, #3d3b7a);
+        }
+
+        body.dark .welcome-section h2 {
+            color: #8a9cff;
+        }
+
+        body.dark .welcome-section p {
+            color: #c8d4e0;
+        }
+
+        /* ===== HEADER ===== */
         header {
-            background: linear-gradient(135deg, #1f3c88, #6c63ff);
+            background: linear-gradient(135deg, rgba(20, 40, 100, 0.88), rgba(80, 70, 200, 0.78)),
+                url('imagenes/jellize_ejemplo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px 50px;
             text-align: center;
+            position: relative;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: bold;
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 10px;
         }
 
         header p {
-            margin-top: 12px;
-            font-size: 1.25em;
+            font-size: 1.3rem;
             opacity: 0.95;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
         }
 
+        /* ===== NAV ===== */
         nav {
-            background: #1f1f1f;
+            background: #162035;
             display: flex;
             justify-content: center;
-            padding: 12px 0;
             flex-wrap: wrap;
+            padding: 10px 0;
+            gap: 4px;
+            border-bottom: 2px solid #6c63ff;
         }
 
         nav a {
-            color: white;
-            padding: 12px 22px;
+            color: #f0f4fa;
+            padding: 10px 20px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 30px;
             transition: 0.3s;
         }
 
         nav a:hover {
             background: #6c63ff;
-            border-radius: 6px;
+            color: white;
+            transform: scale(1.04);
         }
 
+        /* ===== SECCIÓN DE BIENVENIDA (NUEVO) ===== */
+        .welcome-section {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 25px 10px;
+            text-align: center;
+        }
+
+        .welcome-section h2 {
+            color: #1f3c88;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .welcome-section p {
+            font-size: 1.15rem;
+            color: #3d4a5c;
+            max-width: 850px;
+            margin: 0 auto 12px;
+            line-height: 1.9;
+        }
+
+        .welcome-section .sub {
+            font-size: 1rem;
+            color: #5a6a7c;
+        }
+
+        /* ===== DARK TOGGLE ===== */
         .dark-toggle {
             position: fixed;
             left: 20px;
             bottom: 20px;
             background: #6c63ff;
             color: white;
-            padding: 12px 18px;
+            padding: 12px 20px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 18px rgba(108, 99, 255, 0.35);
             z-index: 999;
+            transition: transform 0.2s, background 0.3s;
+            border: none;
+            font-size: 0.95rem;
         }
 
+        .dark-toggle:hover {
+            background: #5a52e0;
+            transform: scale(1.04);
+        }
+
+        .dark-toggle:active {
+            transform: scale(0.92);
+        }
+
+        /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, #1f3c88, #6c63ff);
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
+            padding: 50px 20px;
             text-align: center;
-            padding: 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
         }
 
+        .hero span {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 30px;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+        /* ===== CONTENT (cards) ===== */
         .content {
-            padding: 35px;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 25px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background: white;
-            padding: 22px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-top: 5px solid #6c63ff;
+            padding: 25px 22px 22px;
+            border-radius: 20px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+            border-top: 6px solid #6c63ff;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
         }
 
         .card h2 {
-            margin-top: 0;
             color: #1f3c88;
-            font-size: 1.5em;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card img {
+            width: 100%;
+            max-height: 190px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 18px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            flex: 1;
+        }
+
+        .card ul li {
+            padding: 6px 0;
+            border-bottom: 1px dashed #e9ecf0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .card ul li a {
+            color: #1f3c88;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .card ul li a:hover {
+            color: #6c63ff;
+            transform: translateX(-4px);
+        }
+
+        .card ul li a:active {
+            transform: scale(0.94);
+            color: #4a42c0;
         }
 
         .description {
-            font-size: 1.1em;
-            color: #444;
-            margin-bottom: 15px;
+            color: #3d4a5c;
+            font-size: 1.05rem;
+            flex: 1;
         }
 
         body.dark .description {
-            color: #ccc;
+            color: #b8c4d4;
         }
 
+        /* ===== BOTONES ===== */
         .youtube-btn {
             display: inline-block;
             background: linear-gradient(135deg, #1f3c88, #6c63ff);
             color: white;
-            padding: 12px 25px;
+            padding: 12px 28px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.2s;
+            box-shadow: 0 4px 14px rgba(108, 99, 255, 0.25);
+            text-align: center;
+            align-self: flex-start;
+            margin-top: 8px;
         }
 
         .youtube-btn:hover {
-            opacity: 0.85;
+            transform: scale(1.03);
+            box-shadow: 0 6px 24px rgba(108, 99, 255, 0.35);
         }
 
+        .youtube-btn:active {
+            transform: scale(0.94);
+            background: #1f3c88;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
-            background: #1f1f1f;
-            color: white;
+            background: #162035;
+            color: #c8d0dc;
             text-align: center;
-            padding: 18px;
-            margin-top: 35px;
+            padding: 28px 20px;
+            margin-top: 20px;
+            border-top: 2px solid #6c63ff;
         }
 
         footer a {
-            color: #6c63ff;
+            color: #8a9cff;
             text-decoration: none;
+            margin: 0 8px;
+            font-weight: 500;
         }
 
         footer a:hover {
             text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px 18px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2.1rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .hero {
+                font-size: 1.3rem;
+                padding: 30px 16px;
+            }
+
+            .content {
+                padding: 20px 12px;
+                gap: 20px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .card h2 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+
+            .welcome-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .welcome-section p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2453920159279710"
         crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
 
-    <div class="dark-toggle" onclick="toggleDarkMode()">
-        🌙 وضع ليلي
-    </div>
+    <!-- ===== BOTÓN MODO OSCURO ===== -->
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 وضع ليلي</button>
 
+    <!-- ===== HEADER ===== -->
     <header>
         <h1>إسبانيا 2026: للمغتربين العرب</h1>
         <p>منصة موثوقة للمعلومات، الأخبار، والإرشادات للمهاجرين العرب في إسبانيا</p>
     </header>
 
+    <!-- ===== NAV ===== -->
     <nav>
         <a href="index.html">الرئيسية</a>
         <a href="#info">معلومات</a>
@@ -198,10 +419,29 @@
         <a href="cookies.html">سياسة Cookies</a>
     </nav>
 
+    <!-- ============================================================ -->
+    <!-- ===== SECCIÓN DE BIENVENIDA (NUEVO TEXTO ORIGINAL) ===== -->
+    <!-- ============================================================ -->
+    <section class="welcome-section">
+        <h2>🌟 مرحباً بك في منصة المغترب 2026</h2>
+        <p>
+            إذا كنت مغترباً عربياً في إسبانيا، أو تفكر في الهجرة إليها، فأنت في المكان المناسب.
+            نقدم لك دليلاً شاملاً ومحدثاً لكل ما تحتاجه: من الحصول على NIE، إلى استئجار منزل،
+            مروراً باللجوء، التأمين الصحي، والضرائب. كل المعلومات مبنية على تجارب حقيقية ومصادر رسمية
+            لنساعدك على اتخاذ القرارات الصحيحة وتوفير وقتك وجهدك.
+        </p>
+        <p class="sub">
+            📌 تصفح خدماتنا أدناه، أو استخدم القائمة العلوية للوصول السريع إلى ما تبحث عنه.
+        </p>
+    </section>
+
+    <!-- ===== CONTENIDO ===== -->
     <section class="content">
 
+        <!-- TARJETA 1: من نحن -->
         <div class="card" id="info">
-            <h2>من نحن</h2>
+            <img src="imagenes/quien_somos_ejemplo.jpg" alt="المجتمع العربي في إسبانيا">
+            <h2>📖 من نحن</h2>
             <p class="description">
                 "المغترب 2026" هو مشروع إعلامي مخصص للجالية العربية في إسبانيا.
                 نقدم محتوى موثوقًا حول الهجرة، القوانين، الدراسة، العمل، المساعدات الاجتماعية،
@@ -209,8 +449,9 @@
             </p>
         </div>
 
+        <!-- TARJETA 2: الأخبار -->
         <div class="card" id="news">
-            <h2>أهم الأخبار اليوم</h2>
+            <h2>📰 أهم الأخبار اليوم</h2>
             <ul>
                 <li>📌 تحديث جديد حول مواعيد الشرطة للأجانب</li>
                 <li>📌 ارتفاع الحد الأدنى للأجور في إسبانيا</li>
@@ -218,8 +459,9 @@
             </ul>
         </div>
 
+        <!-- TARJETA 3: الخدمات -->
         <div class="card" id="services">
-            <h2>الخدمات والإجراءات</h2>
+            <h2>🛠️ الخدمات والإجراءات</h2>
             <ul>
                 <li><a href="nie-espana.html">🧭 كيفية الحصول على NIE</a></li>
                 <li><a href="empadronamiento.html">🏠 خطوات empadronamiento</a></li>
@@ -237,64 +479,72 @@
             </ul>
         </div>
 
+        <!-- TARJETA 4: أسئلة شائعة -->
         <div class="card" id="faq">
-            <h2>أسئلة شائعة</h2>
+            <h2>❓ أسئلة شائعة</h2>
             <ul>
-                <li>كيف أجد عملًا بدون أوراق؟</li>
-                <li>هل يمكنني الدراسة أثناء انتظار اللجوء؟</li>
-                <li>ما هي حقوقي كمهاجر؟</li>
+                <li>🔹 كيف أجد عملًا بدون أوراق؟</li>
+                <li>🔹 هل يمكنني الدراسة أثناء انتظار اللجوء؟</li>
+                <li>🔹 ما هي حقوقي كمهاجر؟</li>
             </ul>
         </div>
 
+        <!-- TARJETA 5: الفيديوهات -->
         <div class="card" id="videos">
-            <h2>أحدث الفيديوهات</h2>
+            <img src="imagenes/canal_ejemplo.jpg" alt="قناة اليوتيوب">
+            <h2>▶️ أحدث الفيديوهات</h2>
             <p>شاهد أحدث فيديوهاتنا على القناة:</p>
-            <a class="youtube-btn" href="https://www.youtube.com/@almu3tareb2025/videos" target="_blank">
-                مشاهدة الفيديوهات
+            <a class="youtube-btn" href="https://www.youtube.com/@مغتربي34إسبانيا" target="_blank">
+                🎬 مشاهدة الفيديوهات
             </a>
         </div>
 
+        <!-- TARJETA 6: المجتمع -->
         <div class="card" id="comunidad">
-            <h2>منشورات المجتمع</h2>
+            <img src="imagenes/comunidad-card.jpg" alt="المجتمع والمشاركة">
+            <h2>👥 منشورات المجتمع</h2>
             <p>تابع آخر التحديثات على صفحة المجتمع:</p>
-            <a class="youtube-btn" href="https://www.youtube.com/@almu3tareb2025/posts" target="_blank">
-                زيارة صفحة المجتمع
+            <a class="youtube-btn" href="https://www.youtube.com/@مغتربي34إسبانيا/community" target="_blank">
+                📢 زيارة صفحة المجتمع
             </a>
         </div>
 
+        <!-- TARJETA 7: آراء المتابعين -->
         <div class="card">
-            <h2>آراء المتابعين</h2>
-            <p>⭐ "أفضل قناة للمغتربين العرب"</p>
-            <p>⭐ "معلومات دقيقة ومفيدة جدًا"</p>
-            <p>⭐ "أنقذتموني في أول أسبوع لي في إسبانيا"</p>
+            <h2>⭐ آراء المتابعين</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="border: none; padding: 6px 0;">⭐ "أفضل قناة للمغتربين العرب"</li>
+                <li style="border: none; padding: 6px 0;">⭐ "معلومات دقيقة ومفيدة جدًا"</li>
+                <li style="border: none; padding: 6px 0;">⭐ "أنقذتموني في أول أسبوع لي في إسبانيا"</li>
+            </ul>
         </div>
 
     </section>
 
+    <!-- ===== HERO ===== -->
     <section class="hero">
-        كل ما تحتاج معرفته للعيش في إسبانيا
+        <span>كل ما تحتاج معرفته للعيش في إسبانيا</span>
     </section>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
-        <p>Contacto: u8233844791@gmail.com</p>
+        <p>📧 Contacto: <a href="mailto:u8233844791@gmail.com">u8233844791@gmail.com</a></p>
         <p>&copy; 2026 Akhbar Almuhagir</p>
-        <br>
-        <a href="about.html">من نحن</a> |
-        <a href="privacy.html">سياسة الخصوصية</a> |
-        <a href="terms.html">الشروط والأحكام</a> |
-        <a href="contact.html">اتصل بنا</a> |
-        <a href="cookies.html">سياسة Cookies</a>
+        <div class="footer-links">
+            <a href="about.html">من نحن</a>
+            <a href="privacy.html">سياسة الخصوصية</a>
+            <a href="terms.html">الشروط والأحكام</a>
+            <a href="contact.html">اتصل بنا</a>
+            <a href="cookies.html">سياسة Cookies</a>
+        </div>
     </footer>
 
+    <!-- ===== SCRIPT MODO OSCURO ===== -->
     <script>
         function toggleDarkMode() {
             document.body.classList.toggle('dark');
-            var btn = document.querySelector('.dark-toggle');
-            if (document.body.classList.contains('dark')) {
-                btn.innerHTML = '☀️ وضع عادي';
-            } else {
-                btn.innerHTML = '🌙 وضع ليلي';
-            }
+            const btn = document.querySelector('.dark-toggle');
+            btn.textContent = document.body.classList.contains('dark') ? '☀️ وضع عادي' : '🌙 وضع ليلي';
         }
     </script>
 
